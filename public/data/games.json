@@ -1,0 +1,200 @@
+[
+    {
+      "id": 1,
+      "title": "Catan",
+      "shortDescription": "Стратегическая игра о колонизации острова.",
+      "description": "Catan — это настольная игра, где игроки соревнуются за ресурсы, строят дороги и города.",
+      "playTime": 90,
+      "players": "3-4",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/162886.jpg?raw=true"
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 3,
+      "title": "Catan",
+      "shortDescription": "Стратегическая игра о колонизации острова.",
+      "description": "Catan — это настольная игра, где игроки соревнуются за ресурсы, строят дороги и города.",
+      "playTime": 90,
+      "players": "3-4",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/162886.jpg?raw=true"
+    },
+    {
+      "id": 4,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 3,
+      "title": "Catan",
+      "shortDescription": "Стратегическая игра о колонизации острова.",
+      "description": "Catan — это настольная игра, где игроки соревнуются за ресурсы, строят дороги и города.",
+      "playTime": 90,
+      "players": "3-4",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/162886.jpg?raw=true"
+    },
+    {
+      "id": 4,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 3,
+      "title": "Catan",
+      "shortDescription": "Стратегическая игра о колонизации острова.",
+      "description": "Catan — это настольная игра, где игроки соревнуются за ресурсы, строят дороги и города.",
+      "playTime": 90,
+      "players": "3-4",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/162886.jpg?raw=true"
+    },
+    {
+      "id": 4,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 3,
+      "title": "Catan",
+      "shortDescription": "Стратегическая игра о колонизации острова.",
+      "description": "Catan — это настольная игра, где игроки соревнуются за ресурсы, строят дороги и города.",
+      "playTime": 90,
+      "players": "3-4",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/162886.jpg?raw=true"
+    },
+    {
+      "id": 4,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 3,
+      "title": "Catan",
+      "shortDescription": "Стратегическая игра о колонизации острова.",
+      "description": "Catan — это настольная игра, где игроки соревнуются за ресурсы, строят дороги и города.",
+      "playTime": 90,
+      "players": "3-4",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/162886.jpg?raw=true"
+    },
+    {
+      "id": 4,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 3,
+      "title": "Catan",
+      "shortDescription": "Стратегическая игра о колонизации острова.",
+      "description": "Catan — это настольная игра, где игроки соревнуются за ресурсы, строят дороги и города.",
+      "playTime": 90,
+      "players": "3-4",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/162886.jpg?raw=true"
+    },
+    {
+      "id": 4,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    },
+    {
+      "id": 3,
+      "title": "Catan",
+      "shortDescription": "Стратегическая игра о колонизации острова.",
+      "description": "Catan — это настольная игра, где игроки соревнуются за ресурсы, строят дороги и города.",
+      "playTime": 90,
+      "players": "3-4",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/162886.jpg?raw=true"
+    },
+    {
+      "id": 4,
+      "title": "Ticket to Ride",
+      "shortDescription": "Игра о строительстве железных дорог.",
+      "description": "Ticket to Ride — это игра, где игроки строят маршруты поездов по карте.",
+      "playTime": 60,
+      "players": "2-5",
+      "coverImage": "https://github.com/fso13/note-boardgames-react/blob/master/src/assets/images/game/126100.jpg?raw=true"
+    }
+  ]

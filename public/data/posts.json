@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "date": "2025-02-10",
+    "description": "Отличная игра в Catan!",
+    "games": [
+      { "id": 1, "playCount": 2 },
+      { "id": 2, "playCount": 1 } 
+    ],
+    "media": ["https://habrastorage.org/r/w1560/getpro/habr/upload_files/746/495/8e5/7464958e5752d561dfd32760f2fdbd60.png",
+    "https://habrastorage.org/r/w1560/getpro/habr/upload_files/3e3/9d9/380/3e39d93803a088bc7dc7b4dc74db7849.jpeg"]
+  },
+  {
+    "id": 2,
+    "date": "2025-02-01",
+    "description": "Сыграли в Ticket to Ride.",
+    "games": [
+      { "id": 2, "playCount": 2 }
+    ],
+    "media": []
+  },
+  {
+    "id": 3,
+    "date": "2025-02-03",
+    "description": "Снова играли в Catan.",
+    "games": [
+      { "id": 1, "playCount": 1 }
+    ],
+    "media": ["https://habrastorage.org/r/w1560/getpro/habr/upload_files/3e3/9d9/380/3e39d93803a088bc7dc7b4dc74db7849.jpeg"]
+  }
+  ,
+  {
+    "id": 4,
+    "date": "2025-02-01",
+    "description": "Сыграли в Ticket to Ride.",
+    "games": [
+      { "id": 2, "playCount": 2 }
+    ],
+    "media": []
+  },
+  {
+    "id": 5,
+    "date": "2025-02-03",
+    "description": "Снова играли в Catan.",
+    "games": [
+      { "id": 1, "playCount": 1 }
+    ],
+    "media": ["https://habrastorage.org/r/w1560/getpro/habr/upload_files/3e3/9d9/380/3e39d93803a088bc7dc7b4dc74db7849.jpeg"]
+  },
+  {
+    "id": 6,
+    "date": "2025-02-01",
+    "description": "Сыграли в Ticket to Ride.",
+    "games": [
+      { "id": 2, "playCount": 2 }
+    ],
+    "media": []
+  },
+  {
+    "id": 7,
+    "date": "2025-02-03",
+    "description": "Снова играли в Catan.",
+    "games": [
+      { "id": 1, "playCount": 1 }
+    ],
+    "media": ["https://habrastorage.org/r/w1560/getpro/habr/upload_files/3e3/9d9/380/3e39d93803a088bc7dc7b4dc74db7849.jpeg"]
+  },
+  {
+    "id": 8,
+    "date": "2025-02-01",
+    "description": "Сыграли в Ticket to Ride.",
+    "games": [
+      { "id": 2, "playCount": 2 }
+    ],
+    "media": []
+  },
+  {
+    "id": 9,
+    "date": "2025-02-03",
+    "description": "Снова играли в Catan.",
+    "games": [
+      { "id": 1, "playCount": 1 }
+    ],
+    "media": ["https://habrastorage.org/r/w1560/getpro/habr/upload_files/3e3/9d9/380/3e39d93803a088bc7dc7b4dc74db7849.jpeg"]
+  }
+]
