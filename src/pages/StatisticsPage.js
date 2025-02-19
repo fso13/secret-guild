@@ -13,9 +13,9 @@ const StatisticsPage = () => {
       // Считаем общее количество партий для каждой игры
       const stats = postsData.reduce((acc, post) => {
         post.games.forEach((game) => {
-          const gameTitle = gamesData.find((g) => g.id === game.id)?.title || `Игра #${game.id}`;
-          if (!acc[game.id]) acc[game.id] = { totalPlayCount: 0, title: gameTitle };
-          acc[game.id].totalPlayCount += game.playCount;
+          const gameTitle = gamesData.find((g) => g.name === game.name)?.title || `${game.name}`;
+          if (!acc[game.name]) acc[game.name] = { totalPlayCount: 0, title: gameTitle };
+          acc[game.name].totalPlayCount += game.plays;
         });
         return acc;
       }, {});

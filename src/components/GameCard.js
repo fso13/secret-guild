@@ -1,40 +1,27 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, Typography, useTheme,useMediaQuery } from '@mui/material';
+import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 
 const GameCard = ({ game, onClick }) => {
-    const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  
   return (
-    <Card onClick={onClick} sx={{
-      maxWidth: isMobile ? '100%' : 345,
-      margin: 'auto',
-      mb: 3,
-      cursor: 'pointer',
-    }}>
-      {/* Квадратное изображение */}
+    <Card onClick={onClick}>
       <CardMedia
         component="img"
-        image={game.coverImage}
-        alt={game.title}
-        sx={{
-          aspectRatio: '1 / 1', // Соотношение сторон 1:1 (квадрат)
-          objectFit: 'cover', // Обрезаем изображение до ближайшей стороны
-          width: '100%', // Занимает всю ширину карточки
-        }}
+        height="140"
+        image={game.image}
+        alt={game.name}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {game.title}
+          {game.name}
+        </Typography>
+        <Typography style={{ whiteSpace: "pre-wrap"}} variant="body2" color="text.secondary">
+          {game.description}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {game.shortDescription}
+          Игроки: {game.minPlayers}-{game.maxPlayers}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Время игры: {game.playTime} минут
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Игроки: {game.players}
+          Время игры: {game.playTime}
         </Typography>
       </CardContent>
     </Card>

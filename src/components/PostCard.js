@@ -1,73 +1,54 @@
-import React, { useState } from 'react';
-import { Card, CardMedia, CardContent, Typography, Chip, Box, Avatar, useMediaQuery, useTheme } from '@mui/material';
-import { red } from '@mui/material/colors';
-import PostModal from './PostModal';
+import React from 'react';
+import { Card, CardContent, Typography, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const PostCard = ({ post, games }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
-
-  // Функция для получения названия игры по ID
-  const getGameTitle = (gameId) => {
-    const game = games.find((g) => g.id === gameId);
-    return game ? game.title : `Игра #${gameId}`;
+const PostCard = ({ post }) => {
+  // Настройки для карусели
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
   return (
-    <>
-      <Card
-        sx={{
-          maxWidth: isMobile ? '100%' : 345,
-          margin: 'auto',
-          mb: 3,
-          cursor: 'pointer',
-        }}
-        onClick={handleOpenModal}
-      >
-        {/* Медиа (фото/видео) */}
-        {post.media.length > 0 && (
-          <CardMedia
-            component={post.media[0].endsWith('.mp4') ? 'video' : 'img'}
-            height={isMobile ? 200 : 140}
-            image={post.media[0]}
-            alt="Media"
-            controls={post.media[0].endsWith('.mp4')}
-            sx={{ objectFit: 'cover' }}
-          />
-        )}
-
-        <CardContent>
-          {/* Дата игры */}
-          <Typography variant="body2" color="text.secondary" gutterBottom>
-            {new Date(post.date).toLocaleDateString()}
-          </Typography>
-
-          {/* Описание партии */}
-          <Typography variant="body1" component="p" sx={{ mb: 2 }}>
-            {post.description}
-          </Typography>
-
-          {/* Список игр */}
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-            {post.games.map((game, index) => (
-              <Chip
-                key={index}
-                avatar={<Avatar sx={{ bgcolor: red[500] }}>{game.id}</Avatar>}
-                label={`${getGameTitle(game.id)} (${game.playCount} партий)`}
-                variant="outlined"
+    <Card
+      component={Link}
+      to={`/post/${post.id}`}
+      style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
+      {/* Карусель медиа */}
+      <Box sx={{ width: '100%', maxWidth: 400 }}>
+        <Slider {...settings}>
+          {post.media.map((media, index) => (
+            <div key={index}>
+              <img
+                src={media}
+                alt={`Media ${index}`}
+                style={{ width: '100%', height: '200px', objectFit: 'cover' }}
               />
-            ))}
-          </Box>
-        </CardContent>
-      </Card>
+            </div>
+          ))}
+        </Slider>
+      </Box>
 
-      {/* Модальное окно */}
-      <PostModal post={post} games={games} open={isModalOpen} onClose={handleCloseModal} />
-    </>
+      {/* Контент по центру */}
+      <CardContent sx={{}}>
+        <Typography gutterBottom variant="h5" component="div">
+          {post.date}
+        </Typography>
+        <Typography style={{ whiteSpace: "pre-wrap"}} variant="body2" color="text.secondary">
+          {post.description}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Игры: {post.games.map((game) => game.name).join(', ')}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 
