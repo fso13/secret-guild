@@ -1,0 +1,15 @@
+   /* Измените цвет активной точки */
+   .slick-dots li.slick-active button {
+    background-color: red; /* Цвет активной точки */
+}
+
+/* Измените цвет неактивных точек */
+.slick-dots li button {
+    background-color: blue; /* Цвет неактивных точек */
+}
+
+/* Измените размер точек, если нужно */
+.slick-dots li button {
+    width: 12px; /* Ширина точки */
+    height: 12px; /* Высота точки */
+}

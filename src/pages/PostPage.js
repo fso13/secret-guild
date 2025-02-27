@@ -22,56 +22,72 @@ const PostPage = () => {
   // Настройки для карусели
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: true, // Показываем стрелки только если больше одного элемента
   };
 
   if (!post) {
     return <Typography>Пост не найден</Typography>;
   }
 
+  
+
   return (
-    <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', mt: 4 }}>
+    <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
       {/* Заголовок с датой */}
       <Typography variant="h4" gutterBottom>
-        {post.date}
+      {convertStringToDate(post.title).toLocaleDateString('ru')}
       </Typography>
 
       {/* Карусель медиа */}
-      <Box sx={{ width: '100%', maxWidth: 600, height: 400, overflow: 'hidden', mb: 4 }}>
+      <Box sx={{ width: '100%', maxWidth: 600, height: 400, borderRadius: 8, overflow: 'hidden', mb: 4 }}>
         <Slider {...settings}>
           {post.media.map((media, index) => (
             <div key={index}>
               <img
                 src={media}
                 alt={`Media ${index}`}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', borderRadius: 8, objectFit: 'cover' }}
               />
             </div>
           ))}
         </Slider>
       </Box>
 
+     {/* Список игр */}
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        Игры: {post.games.map((game) => game.title).join(', ')}
+      </Typography>
+
       {/* Описание поста */}
-      <Typography style={{ whiteSpace: "pre-wrap"}} variant="body1" sx={{ mb: 2 }}>
+      <Typography style={{ whiteSpace: "pre-wrap"}}  variant="body1" sx={{ mb: 2 }}>
         {post.description}
       </Typography>
 
-      {/* Список игр */}
-      <Typography variant="h6" sx={{ mb: 2 }}>
-        Игры:
-      </Typography>
-      <Box sx={{ mb: 4 }}>
-        {post.games.map((game, index) => (
-          <Typography key={index} variant="body2">
-            {game.name} ({game.plays} партий)
-          </Typography>
-        ))}
-      </Box>
     </Container>
   );
 };
 
 export default PostPage;
+
+
+function convertStringToDate(dateString) {
+  // Разбиваем строку по разделителю "."
+  const parts = dateString.split('.');
+
+  // Проверяем, что у нас есть три части: день, месяц и год
+  if (parts.length !== 3) {
+      throw new Error('Неверный формат даты. Ожидается "ДД.ММ.ГГГГ".');
+  }
+
+  // Извлекаем день, месяц и год
+  const day = parseInt(parts[0], 10);
+  const month = parseInt(parts[1], 10) - 1; // Месяцы начинаются с 0
+  const year = parseInt(parts[2], 10);
+
+  // Создаем объект Date
+  return new Date(year, month, day);
+}

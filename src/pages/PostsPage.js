@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid } from '@mui/material';
+import { Grid2, Container } from '@mui/material';
 import PostCard from '../components/PostCard';
 
 const PostsPage = () => {
@@ -12,15 +12,15 @@ const PostsPage = () => {
   }, []);
 
   return (
-    <div>
-      <Grid container spacing={3}>
+    <Container sx={{ py: 4 }}>
+      <Grid2 container spacing={3} justifyContent="center">
         {posts.map((post) => (
-          <Grid item key={post.id} xs={12} sm={6} md={4}>
+          <Grid2 item key={post.id} xs={12} sm={6} md={4}>
             <PostCard post={post} />
-          </Grid>
+          </Grid2>
         ))}
-      </Grid>
-    </div>
+      </Grid2>
+    </Container>
   );
 };
 
