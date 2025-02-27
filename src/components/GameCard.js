@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
-import { Card, CardMedia, CardContent, Typography, Modal, Box, useMediaQuery, useTheme} from '@mui/material';
+import React from 'react';
+import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const GameCard = ({ game }) => {
-  const [open, setOpen] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+ 
   // Ограничение текста до 100 символов
   const truncateDescription = (text, maxLength = 100) => {
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
@@ -21,12 +12,22 @@ const GameCard = ({ game }) => {
   return (
     <>
       {/* Карточка игры */}
-      <Card onClick={handleOpen} sx={{ cursor: 'pointer', maxWidth: 300, width: '100%', margin: '0 auto' }}>
+      <Card component={Link}
+        to={`/game/${game.id}`}
+        style={{
+          textDecoration: 'none',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          maxWidth: 300, // Ограничиваем ширину карточки
+          width: '100%', // Занимает всю доступную ширину, но не более 300px
+          margin: '0 auto', // Центрируем карточку
+        }}>
         {/* Квадратное изображение */}
         <Box sx={{ width: 300, height: 300, overflow: 'hidden' }}>
           <CardMedia
             component="img"
-            image={'/static/images/game/'+game.id+'.jpg'}
+            src={'/static/images/game/' + game.id + '.jpg'}
             alt={game.name}
             sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
@@ -58,45 +59,7 @@ const GameCard = ({ game }) => {
         </CardContent>
       </Card>
 
-      {/* Модальное окно с полным описанием игры */}
-      <Modal open={open} onClose={handleClose}>
-        <Box
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: isMobile ? '90%' : 400, // Адаптивная ширина
-            maxHeight: '90vh', // Максимальная высота
-            bgcolor: 'background.paper',
-            boxShadow: 24,
-            p: 4,
-            borderRadius: 2,
-            overflowY: 'auto', // Прокрутка контента
-          }}
-        >
-          <Typography variant="h5" gutterBottom>
-            {game.name}
-          </Typography>
-          {/* Квадратное изображение в модальном окне */}
-          <Box sx={{ width: 'auto', height: 400, mb: 2 }}>
-            <img
-              src={'/static/images/game/'+game.id+'.jpg'}
-              alt={game.name}
-              style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: 8 }}
-            />
-          </Box>
-          <Typography variant="body1" sx={{ mt: 2 }}>
-            {game.description}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
-            Игроки: {game.minPlayers}-{game.maxPlayers}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Время игры: {game.playTime}
-          </Typography>
-        </Box>
-      </Modal>
+      
     </>
   );
 };

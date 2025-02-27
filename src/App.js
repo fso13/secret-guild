@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './theme';
 import NavBar from './components/NavBar';
 import GamesPage from './pages/GamesPage';
+import GamePage from './pages/GamePage';
 import PostsPage from './pages/PostsPage';
 import StatisticsPage from './pages/StatisticsPage';
 import CalendarPage from './pages/CalendarPage';
@@ -21,6 +22,8 @@ const App = () => {
           <Route path="/statistics" element={<StatisticsPage />} />
           <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/post/:postId" element={<PostPage />} /> {/* Новый маршрут */}
+          <Route path="/game/:gameId" element={<GamePage />} /> {/* Новый маршрут */}
+
         </Routes>
       </Router>
     </ThemeProvider>
