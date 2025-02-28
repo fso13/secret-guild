@@ -17,7 +17,7 @@ const GamesPage = () => {
   const filteredGames = games.filter((game) => {
     const matchesSearchTerm = game.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesPlayerCount =
-      (game.minPlayers <= playerCount[0] && game.maxPlayers >= playerCount[1] || playerCount[0] < 0);
+      ((game.minPlayers <= playerCount[0] && game.maxPlayers >= playerCount[1]) || playerCount[0] < 0);
     return matchesSearchTerm && matchesPlayerCount;
   });
 

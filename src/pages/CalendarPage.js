@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Calendar, dateFnsLocalizer, momentLocalizer } from 'react-big-calendar';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment'
 import 'moment/locale/ru';
-import { Box, Typography, ToggleButtonGroup, ToggleButton, useTheme } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import { ThemeContext } from '../theme';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -25,11 +25,11 @@ const CalendarPage = () => {
           .filter((post) => convertStringToDate(post.title)) // Фильтруем посты с корректной датой
           .flatMap((post) =>
             post.games.map((game) => ({
-            title: game.title,
-            start: convertStringToDate(post.title),
-            end: convertStringToDate(post.title),
-            allDay: true,
-          })));
+              title: game.title,
+              start: convertStringToDate(post.title),
+              end: convertStringToDate(post.title),
+              allDay: true,
+            })));
         setEvents(formattedEvents);
       })
       .catch((error) => {
@@ -45,25 +45,25 @@ const CalendarPage = () => {
   };
 
   return (
-<Box sx={calendarStyle}>
-        <Calendar
-          localizer={localizer}
-          events={events}
-          view={view}
-          onView={setView}
-          views={{ month: true, week: false, day: false }} // Доступные виды
-          startAccessor="start"
-          endAccessor="end"
-          defaultView="month"
-          messages={{
-            today: 'Сегодня',
-            previous: 'Назад',
-            next: 'Вперед',
-            month: 'Месяц',
-          }}
-          style={{ height: '100%' }}
-        />
-        </Box>
+    <Box sx={calendarStyle}>
+      <Calendar
+        localizer={localizer}
+        events={events}
+        view={view}
+        onView={setView}
+        views={{ month: true, week: false, day: false }} // Доступные виды
+        startAccessor="start"
+        endAccessor="end"
+        defaultView="month"
+        messages={{
+          today: 'Сегодня',
+          previous: 'Назад',
+          next: 'Вперед',
+          month: 'Месяц',
+        }}
+        style={{ height: '100%' }}
+      />
+    </Box>
   );
 };
 
