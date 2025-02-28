@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/post/:postId" element={<PostPage />} /> {/* Новый маршрут */}
           <Route path="/game/:gameId" element={<GamePage />} /> {/* Новый маршрут */}
-
+          <Route path="/game/:gameName" element={<GamePage />} />
         </Routes>
       </Router>
     </ThemeProvider>

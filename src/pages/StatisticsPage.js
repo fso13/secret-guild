@@ -1,47 +1,64 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const StatisticsPage = () => {
-  const [statistics, setStatistics] = useState([]);
+  const [games, setGamesData] = useState([]);
 
   useEffect(() => {
-    Promise.all([
-      fetch('/data/posts.json').then((response) => response.json()),
-      fetch('/data/games.json').then((response) => response.json()),
-    ]).then(([postsData, gamesData]) => {
-      // Считаем общее количество партий для каждой игры
-      const stats = postsData.reduce((acc, post) => {
-        post.games.forEach((game) => {
-          const gameTitle = gamesData.find((g) => g.name === game.title)?.name || `${game.title}`;
-          if (!acc[game.title]) acc[game.title] = { totalPlayCount: 0, title: gameTitle };
-          acc[game.title].totalPlayCount += game.count;
-        });
-        return acc;
-      }, {});
+    // Загружаем данные постов
+    fetch('/data/posts.json')
+      .then((response) => response.json())
+      .then((posts) => {
+        // Создаем объект для подсчета количества партий по играм
+        const playsCount = {};
 
-      // Преобразуем статистику в массив для графика
-      const statisticsData = Object.values(stats);
-      setStatistics(statisticsData);
-    });
+        // Проходим по всем постам и считаем партии
+        posts.forEach((post) => {
+          post.games.forEach((game) => {
+            if (playsCount[game.title]) {
+              playsCount[game.title] += game.count;
+            } else {
+              playsCount[game.title] = game.count;
+            }
+          });
+        });
+
+        // Преобразуем объект в массив для графика
+        const formattedData = Object.keys(playsCount).map((gameName) => ({
+          name: gameName,
+          plays: playsCount[gameName],
+        }));
+
+        setGamesData(formattedData);
+      });
   }, []);
 
+
   return (
-    <div>
+    <Box sx={{ p: 3 }}>
       <Typography variant="h4" gutterBottom>
-        Статистика игр
+        Статистика
       </Typography>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={statistics}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="title" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="totalPlayCount" fill="#8884d8" name="Количество партий" />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+
+      {/* График */}
+      <Box sx={{ width: '100%', height: 2500 }}>
+        <ResponsiveContainer>
+          <BarChart
+            data={games}
+            layout="vertical" // Вертикальный график
+            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis type="number" /> {/* Ось X: количество партий */}
+            <YAxis type="category" dataKey="name" width={150} /> {/* Ось Y: названия игр */}
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="plays" fill="#8884d8" name={'Колличество партий'} /> {/* Столбцы для количества партий */}
+          </BarChart>
+        </ResponsiveContainer>
+      </Box>
+    </Box>
   );
 };
 

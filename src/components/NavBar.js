@@ -62,7 +62,7 @@ const NavBar = () => {
           {/* Иконка приложения и название сайта */}
           <AppIcon sx={{ mr: 1 }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Игровое приложение
+            Тайная гильдия v2.0
           </Typography>
           {/* Пункты меню для десктопной версии */}
           {!isMobile && (
@@ -90,17 +90,28 @@ const NavBar = () => {
       </AppBar>
 
       {/* Боковая панель для мобильной версии */}
-      <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={handleDrawerClose}
+        sx={{
+          '& .MuiDrawer-paper': {
+            backgroundColor: theme.palette.background.default, // Фон боковой панели
+            color: theme.palette.text.primary, // Цвет текста
+          },
+        }}
+      >
         <List>
           {menuItems.map((item) => (
             <ListItem
               button
               key={item.text}
-              component={Link} // Используем Link для маршрутизации
+              component={Link}
               to={item.path}
               onClick={handleDrawerClose}
+              sx={{ color: 'inherit' }} // Наследуем цвет текста
             >
-              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemIcon sx={{ color: 'inherit' }}>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItem>
           ))}

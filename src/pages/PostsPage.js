@@ -12,15 +12,14 @@ const PostsPage = () => {
   }, []);
 
   return (
-    <Container sx={{ py: 4 }}>
-      <Grid2 container spacing={3} justifyContent="center">
+      <Grid2 sx={{ py: 4 }} container spacing={3} justifyContent="center">
         {posts.map((post) => (
           <Grid2 item key={post.id} xs={12} sm={6} md={4}>
             <PostCard post={post} />
           </Grid2>
         ))}
       </Grid2>
-    </Container>
+
   );
 };
 

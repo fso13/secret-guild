@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, CardContent, Typography, Box ,CardMedia } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Card, CardContent, Typography, Box ,CardMedia, Link } from '@mui/material';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Link as RouterLink } from 'react-router-dom'; // Импортируем Link для маршрутизации
 
 const PostCard = ({ post }) => {
   
@@ -20,7 +20,7 @@ const PostCard = ({ post }) => {
 
   return (
     <Card
-      component={Link}
+      component={RouterLink}
       to={`/post/${post.id}`}
       style={{
         textDecoration: 'none',
@@ -72,8 +72,18 @@ const PostCard = ({ post }) => {
           {post.description}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Игры: {post.games.map((game) => game.title).join(', ')}
-        </Typography>
+        Игры: {post.games.map((game, index) => (
+              <Link
+                key={index}
+                component={RouterLink}
+                to={`/game/${game.title}`} // Ссылка на страницу игры
+                onClick={(e) => e.stopPropagation()} // Останавливаем всплытие события
+                sx={{ marginRight: 1 }}
+              >
+                {game.title}
+              </Link>
+            ))}
+          </Typography>
       </CardContent>
     </Card>
   );

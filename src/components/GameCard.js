@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
+import { Card, CardMedia, CardContent, Typography, Box ,Chip, Avatar} from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const GameCard = ({ game }) => {
@@ -24,18 +24,42 @@ const GameCard = ({ game }) => {
           margin: '0 auto', // Центрируем карточку
         }}>
         {/* Квадратное изображение */}
-        <Box sx={{ width: 300, height: 300, overflow: 'hidden' }}>
+        <Box sx={{ width: 300, height: 300, overflow: 'hidden', position: 'relative'  }}>
           <CardMedia
             component="img"
             src={'/static/images/game/' + game.id + '.jpg'}
             alt={game.name}
             sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
+          {/* Метка "Дополнение" */}
+          {game.isExtension && (
+            <Chip
+              label="Дополнение"
+              color="success"
+              size="small"
+              sx={{ position: 'absolute', top: 10, right: 10 }}
+            />
+          )}
         </Box>
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
             {game.name}
           </Typography>
+
+          {/* Иконка владельца */}
+          {game.owner && (
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+              <Avatar
+                src={game.owner}
+                alt="Владелец"
+                sx={{ width: 36, height: 36, mr: 1 }}
+              />
+              <Typography variant="body2" color="text.secondary">
+                Владелец
+              </Typography>
+            </Box>
+          )}
+
           {/* Описание с ограничением в 100 символов */}
           <Typography
             variant="body2"

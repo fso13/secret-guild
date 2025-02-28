@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Typography, Container } from '@mui/material';
+import { Box, Typography, Container, Link  } from '@mui/material';
 import Slider from 'react-slick';
+import { Link as RouterLink } from 'react-router-dom'; // Импортируем Link для маршрутизации
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -58,9 +59,19 @@ const PostPage = () => {
       </Box>
 
      {/* Список игр */}
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-        Игры: {post.games.map((game) => game.title).join(', ')}
-      </Typography>
+     <Typography variant="body2" color="text.secondary">
+            Игры: {post.games.map((game, index) => (
+              <Link
+                key={index}
+                component={RouterLink}
+                to={`/game/${game.title}`} // Ссылка на страницу игры
+                onClick={(e) => e.stopPropagation()} // Останавливаем всплытие события
+                sx={{ marginRight: 1 }}
+              >
+                {game.title}
+              </Link>
+            ))}
+          </Typography>
 
       {/* Описание поста */}
       <Typography style={{ whiteSpace: "pre-wrap"}}  variant="body1" sx={{ mb: 2 }}>
