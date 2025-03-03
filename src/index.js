@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'; // Импортируем BrowserRouter
 import App from './App'; // Основной компонент приложения
-import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './theme'; // Провайдер темы (если используется)
 import { CssBaseline } from '@mui/material';
 
@@ -20,6 +19,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root') // Рендерим в элемент с id="root"
 );
-
-// Отчет о производительности (опционально)
-reportWebVitals();
