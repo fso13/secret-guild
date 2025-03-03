@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/secret-guild/static/css/main.e53ca829.css",
-    "main.js": "/secret-guild/static/js/main.695a2604.js",
+    "main.js": "/secret-guild/static/js/main.50f18dd7.js",
     "static/media/slick.svg": "/secret-guild/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/secret-guild/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/secret-guild/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/secret-guild/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/secret-guild/index.html",
     "main.e53ca829.css.map": "/secret-guild/static/css/main.e53ca829.css.map",
-    "main.695a2604.js.map": "/secret-guild/static/js/main.695a2604.js.map"
+    "main.50f18dd7.js.map": "/secret-guild/static/js/main.50f18dd7.js.map"
   },
   "entrypoints": [
     "static/css/main.e53ca829.css",
-    "static/js/main.695a2604.js"
+    "static/js/main.50f18dd7.js"
   ]
 }
