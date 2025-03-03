@@ -80,7 +80,7 @@ const PostCard = ({ post }) => {
                 onClick={(e) => e.stopPropagation()} // Останавливаем всплытие события
                 sx={{ marginRight: 1 }}
               >
-                {game.title}
+                {game.title + '(' + game.count +')'}
               </Link>
             ))}
           </Typography>
