@@ -2,9 +2,10 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment'
 import 'moment/locale/ru';
-import { Box, useTheme } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import { ThemeContext } from '../theme';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { Link } from 'react-router-dom';
 
 const localizer = momentLocalizer(moment)
 
@@ -21,15 +22,14 @@ const CalendarPage = () => {
       .then((response) => response.json())
       .then((data) => {
         // Преобразуем данные в формат, подходящий для календаря
-        const formattedEvents = data
-          .filter((post) => convertStringToDate(post.title)) // Фильтруем посты с корректной датой
-          .flatMap((post) =>
-            post.games.map((game) => ({
-              title: game.title,
-              start: convertStringToDate(post.title),
-              end: convertStringToDate(post.title),
-              allDay: true,
-            })));
+        const formattedEvents = data.map((post) => ({
+          id: post.id, // Добавляем ID поста
+          title: `Игры: ${post.games.map((game) => game.title).join(', ')}`, // Список игр
+          start: convertStringToDate(post.title),
+          end: convertStringToDate(post.title),
+          allDay: true,
+          postData: post, // Сохраняем данные поста
+        }));
         setEvents(formattedEvents);
       })
       .catch((error) => {
@@ -44,9 +44,34 @@ const CalendarPage = () => {
     color: darkMode ? theme.palette.text.primary : '#000',
   };
 
+  // Кастомное отображение события
+  const EventComponent = ({ event }) => {
+    return (
+      <Box>
+        <Link
+          key={event.postData.id}
+          to={`/post/${event.postData.id}`} // Ссылка на страницу поста
+          style={{ color: darkMode ? '#90caf9' : '#1976d2', textDecoration: 'none' }}
+        >
+  
+          <Box>
+            {event.postData.games.map((game) => (
+              <Typography variant="caption" display="block">
+                {game.title} ({game.count})
+              </Typography>
+            ))}
+          </Box>
+        </Link>
+      </Box>
+    );
+  };
+
   return (
     <Box sx={calendarStyle}>
       <Calendar
+        components={{
+          event: EventComponent, // Используем кастомный компонент для отображения событий
+        }}
         localizer={localizer}
         events={events}
         view={view}
