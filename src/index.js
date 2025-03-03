@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom'; // Импортируем BrowserRouter
+import App from './App'; // Основной компонент приложения
+import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from './theme'; // Провайдер темы (если используется)
+import { CssBaseline } from '@mui/material';
+
+// Основной рендер приложения
 ReactDOM.render(
-<BrowserRouter basename="/secret-guild">
-      <App />
-  </BrowserRouter>,
-  document.getElementById('root')
+  <React.StrictMode>
+    {/* Используем BrowserRouter с basename */}
+    <BrowserRouter basename="/secret-guild">
+      {/* Провайдер темы (если используется) */}
+      <ThemeProvider>
+        <CssBaseline/>
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root') // Рендерим в элемент с id="root"
 );
+
+// Отчет о производительности (опционально)
+reportWebVitals();

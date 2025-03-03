@@ -1,7 +1,6 @@
 import React from 'react';
-import { CssBaseline } from '@mui/material';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './theme';
 import NavBar from './components/NavBar';
 import GamesPage from './pages/GamesPage';
 import GamePage from './pages/GamePage';
@@ -12,11 +11,9 @@ import PostPage from './pages/PostPage'; // Импортируем новую с
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <CssBaseline />
-      <Router>
-        <NavBar />
-        <Routes>
+    <div>
+      <NavBar />
+      <Routes>
           <Route path="/" element={<GamesPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/statistics" element={<StatisticsPage />} />
@@ -24,10 +21,8 @@ const App = () => {
           <Route path="/post/:postId" element={<PostPage />} /> {/* Новый маршрут */}
           <Route path="/game/:gameId" element={<GamePage />} /> {/* Новый маршрут */}
           <Route path="/game/:gameName" element={<GamePage />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+          </Routes>
+    </div>
   );
 };
-
 export default App;
