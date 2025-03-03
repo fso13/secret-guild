@@ -7,7 +7,7 @@ const StatisticsPage = () => {
 
   useEffect(() => {
     // Загружаем данные постов
-    fetch('/data/posts.json')
+    fetch(`${process.env.PUBLIC_URL}/data/posts.json`)
       .then((response) => response.json())
       .then((posts) => {
         // Создаем объект для подсчета количества партий по играм

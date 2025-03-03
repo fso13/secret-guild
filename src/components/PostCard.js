@@ -41,13 +41,13 @@ const PostCard = ({ post }) => {
               {mediaUrl.endsWith('.mp4') ? (
                 <video
                   controls
-                  src={mediaUrl}
+                  src={`${process.env.PUBLIC_URL}` + mediaUrl}
                   style={{ width: '100%', height: 300, borderRadius: 8, objectFit: 'cover' }}
                 />
               ) : (
                 <CardMedia
                   component="img"
-                  image={mediaUrl}
+                  image={`${process.env.PUBLIC_URL}` + mediaUrl}
                   alt={`Media ${index}`}
                   sx={{
                     width: '100%',

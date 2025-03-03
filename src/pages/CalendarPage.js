@@ -17,7 +17,7 @@ const CalendarPage = () => {
 
   useEffect(() => {
     // Загружаем данные постов
-    fetch('/data/posts.json')
+    fetch(`${process.env.PUBLIC_URL}/data/posts.json`)
       .then((response) => response.json())
       .then((data) => {
         // Преобразуем данные в формат, подходящий для календаря

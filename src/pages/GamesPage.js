@@ -8,7 +8,7 @@ const GamesPage = () => {
   const [playerCount, setPlayerCount] = useState([-1, -1]); // Диапазон игроков
 
   useEffect(() => {
-    fetch('/data/games.json')
+    fetch(`${process.env.PUBLIC_URL}/data/games.json`)
       .then((response) => response.json())
       .then((data) => setGames(data.filter((g)=> g.owner)));
   }, []);

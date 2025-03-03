@@ -12,7 +12,7 @@ const PostPage = () => {
 
   useEffect(() => {
     // Загружаем данные поста
-    fetch('/data/posts.json')
+    fetch(`${process.env.PUBLIC_URL}/data/posts.json`)
       .then((response) => response.json())
       .then((data) => {
         const foundPost = data.find((p) => p.id === parseInt(postId));
@@ -49,7 +49,7 @@ const PostPage = () => {
           {post.media.map((media, index) => (
             <div key={index}>
               <img
-                src={media}
+                src={`${process.env.PUBLIC_URL}` + media}
                 alt={`Media ${index}`}
                 style={{ width: '100%', height: '100%', borderRadius: 8, objectFit: 'cover' }}
               />

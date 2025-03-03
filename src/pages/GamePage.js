@@ -10,7 +10,7 @@ const GamePage = () => {
 
   useEffect(() => {
     // Загружаем данные поста
-    fetch('/data/games.json')
+    fetch(`${process.env.PUBLIC_URL}/data/games.json`)
       .then((response) => response.json())
       .then((data) => {
         const foundGame = data.find((p) => p.name === gameId || p.id === parseInt(gameId));
@@ -29,7 +29,7 @@ const GamePage = () => {
       <Box sx={{ width: '50%', height: '400px', objectFit: 'contain', position: 'relative' }}>
         <CardMedia
           component="img"
-          src={'/static/images/game/' + game.id + '.jpg'}
+          src={`${process.env.PUBLIC_URL}/static/images/game/` + game.id + '.jpg'}
           alt={game.name}
           sx={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />

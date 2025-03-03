@@ -6,7 +6,7 @@ const PostsPage = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('/data/posts.json')
+    fetch(`${process.env.PUBLIC_URL}/data/posts.json`)
       .then((response) => response.json())
       .then((data) => setPosts(data));
   }, []);

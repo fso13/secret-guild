@@ -27,7 +27,7 @@ const GameCard = ({ game }) => {
         <Box sx={{ width: 300, height: 300, overflow: 'hidden', position: 'relative'  }}>
           <CardMedia
             component="img"
-            src={'/static/images/game/' + game.id + '.jpg'}
+            src={`${process.env.PUBLIC_URL}/static/images/game/` + game.id + '.jpg'}
             alt={game.name}
             sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
