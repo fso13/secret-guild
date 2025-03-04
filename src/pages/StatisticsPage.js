@@ -46,11 +46,11 @@ const StatisticsPage = () => {
           <rect x={x} y={y} width={width} height={height} fill={theme.palette.info.main} />
           <text
             x={x}
-            y={y + height / 2}
+            y={y + height / 2 + 5}
             dy={0}
             textAnchor="start"
             fill={theme.palette.text.primary}
-            fontSize={12}
+            fontSize={16}
           >
             {name}
           </text>
