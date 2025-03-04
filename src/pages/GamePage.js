@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { Typography, Container, Box, CardMedia, Chip, Avatar } from '@mui/material';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { ca } from 'date-fns/locale';
 
 const GamePage = () => {
   const { gameId } = useParams(); // Получаем название игры из URL
