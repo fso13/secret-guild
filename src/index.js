@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'; // Импортируем BrowserRouter
+import { HashRouter } from 'react-router-dom'; // Импортируем BrowserRouter
 import App from './App'; // Основной компонент приложения
 import { ThemeProvider } from './theme'; // Провайдер темы (если используется)
 import { CssBaseline } from '@mui/material';
@@ -9,13 +9,13 @@ import { CssBaseline } from '@mui/material';
 ReactDOM.render(
   <React.StrictMode>
     {/* Используем BrowserRouter с basename */}
-    <BrowserRouter basename="/secret-guild">
+    <HashRouter  hashType="noslash" >
       {/* Провайдер темы (если используется) */}
       <ThemeProvider>
         <CssBaseline/>
         <App />
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root') // Рендерим в элемент с id="root"
 );
