@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { Typography, Container, Box, CardMedia, Chip, Avatar } from '@mui/material';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { ca } from 'date-fns/locale';
 
 const GamePage = () => {
-  const { gameId } = useParams(); // Получаем postId из URL
+  const { gameId } = useParams(); // Получаем название игры из URL
   const [game, setGame] = useState(null);
+  const [totalPlays, setTotalPlays] = useState(0); // Общее количество партий
 
   useEffect(() => {
     // Загружаем данные поста
@@ -15,8 +17,30 @@ const GamePage = () => {
       .then((data) => {
         const foundGame = data.find((p) => p.name === gameId || p.id === parseInt(gameId));
         setGame(foundGame);
+
+        fetch(`${process.env.PUBLIC_URL}/data/posts.json`)
+          .then((response) => response.json())
+          .then((data) => {
+            let plays = 0;
+            data.forEach((post) => {
+              post.games.forEach((g) => {
+                if (g.title === foundGame.name) {
+                  plays += g.count;
+                }
+              });
+            });
+            console.log(plays);
+
+            setTotalPlays(plays); // Устанавливаем общее количество партий
+          });
+
       });
+
+
+    // Загружаем данные постов для подсчета партий
+
   }, [gameId]);
+
 
   if (!game) {
     return <Typography>Пост не найден</Typography>;
@@ -48,6 +72,9 @@ const GamePage = () => {
       <Typography style={{ whiteSpace: "pre-wrap" }}>{game.description}</Typography>
       <Typography>Игроки: {game.minPlayers}-{game.maxPlayers}</Typography>
       <Typography>Время игры: {game.playTime}</Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
+        Всего сыграно партий: {totalPlays}
+      </Typography>
       {/* Иконка владельца */}
       {game.owner && (
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
