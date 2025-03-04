@@ -36,7 +36,7 @@ const NavBar = () => {
 
   // Пункты меню
   const menuItems = [
-    { text: 'Игры', icon: <GamesIcon />, path: '/' },
+    { text: 'Игры', icon: <GamesIcon />, path: '/games' },
     { text: 'Посты', icon: <PostsIcon />, path: '/posts' },
     { text: 'Статистика', icon: <StatsIcon />, path: '/statistics' },
     { text: 'Календарь', icon: <CalendarIcon />, path: '/calendar' },
@@ -60,7 +60,7 @@ const NavBar = () => {
             </IconButton>
           )}
           {/* Иконка приложения и название сайта */}
-          <AppIcon sx={{ mr: 1 }} />
+          <AppIcon onClick={event =>  window.location.href='/'} sx={{ mr: 1 }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Тайная гильдия v2.0
           </Typography>

@@ -61,6 +61,8 @@ const PostPage = () => {
       {/* Карусель медиа */}
       <Box sx={{ width: '100%', maxWidth: 600, height: 400, borderRadius: 8, overflow: 'hidden', mb: 4 }}>
         <Slider {...settings}>
+
+          
           {post.media.map((media, index) => (
             <div key={index}>
               <img
