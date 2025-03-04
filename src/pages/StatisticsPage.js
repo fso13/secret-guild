@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Box, Typography } from '@mui/material';
-
+import { Box, Typography, Link  } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom'; // Импортируем Link для маршрутизации
 const StatisticsPage = () => {
   const [games, setGamesData] = useState([]);
 
@@ -51,7 +51,26 @@ const StatisticsPage = () => {
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" /> {/* Ось X: количество партий */}
-            <YAxis type="category" dataKey="name" width={150} /> {/* Ось Y: названия игр */}
+            {/* <YAxis type="category" dataKey="name" width={150} /> Ось Y: названия игр */}
+            <YAxis
+              type="category"
+              dataKey="name"
+              width={250}
+              tick={(props) => {
+                const { x, y, payload } = props;
+                return (
+                  <Link
+                    component={RouterLink}
+                    to={`/game/${payload.value}`} // Ссылка на страницу игры
+                    sx={{ color: 'inherit', textDecoration: 'none' }}
+                  >
+                    <text  x={x} y={y} dy={5} textAnchor="end" fill="currentColor">
+                      {payload.value}
+                    </text>
+                  </Link>
+                );
+              }}
+            /> {/* Ось Y: названия игр */}
             <Tooltip />
             <Legend />
             <Bar dataKey="plays" fill="#8884d8" name={'Колличество партий'} /> {/* Столбцы для количества партий */}
