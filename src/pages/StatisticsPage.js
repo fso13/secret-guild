@@ -72,7 +72,6 @@ const StatisticsPage = () => {
             layout="vertical"
             margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" />
             <YAxis
               type="category"
