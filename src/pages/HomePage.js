@@ -19,7 +19,7 @@ const HomePage = () => {
   const settings = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     cssEase: "linear",
     speed: 500,
     slidesToShow: 3,
