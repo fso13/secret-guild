@@ -61,7 +61,7 @@ const NavBar = () => {
           )}
           {/* Иконка приложения и название сайта */}
           <AppIcon onClick={event =>  window.location.href='/secret-guild'} sx={{ mr: 1 }} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} onClick={event =>  window.location.href='/secret-guild'}>
             Тайная гильдия v2.0
           </Typography>
           {/* Пункты меню для десктопной версии */}
