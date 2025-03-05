@@ -26,8 +26,8 @@ const StatisticsPage = () => {
         const formattedData = Object.keys(playsCount).map((gameName) => ({
           name: gameName,
           plays: playsCount[gameName],
-        }));
-
+        }))
+        .sort((a, b) => a.plays < b.plays ? 1 : -1)
         setGamesData(formattedData);
       });
   }, []);
