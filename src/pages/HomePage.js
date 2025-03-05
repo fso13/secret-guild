@@ -31,11 +31,11 @@ const HomePage = () => {
     <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
 
       {/* Описание поста */}
-      <Typography variant="body1" sx={{ mb: 2 }} align='inherit'>
-        Сайт группы не без талантливых людей, которые любят играть/создавать/проводить настольные игры.
+      <Typography variant="h4" sx={{ mb: 2 }} align='inherit' style={{textAlign: "center" }} >
+        Сайт группы не без талантливых людей, которые любят играть, создавать, проводить настольные игры.
       </Typography>
       <Typography variant="subtitle2" sx={{ mb: 2 }} align='inherit'>
-        По вопросом и предложениям обращаться на почту <Link href="mailto:secret@guild-13.ru">secret@guild-13.ru</Link>
+        По вопросам и предложениям обращаться на почту <Link href="mailto:secretguild13@gmail.com">secretguild13@gmail.com</Link>
       </Typography>
       {/* Карусель медиа */}
       <Box sx={{ width: '100%', maxWidth: 'auto', height: 'auto', overflow: 'hidden', mb: 4 }}>
