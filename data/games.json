@@ -16,7 +16,7 @@
     "minPlayers": 2,
     "maxPlayers": 4,
     "isExtension": false,
-    "time": "120 - 180 мин"
+    "playTime": "120 - 180 мин"
   },
   {
     "id": 15919,
@@ -115,7 +115,7 @@
     "minPlayers": 2,
     "maxPlayers": 2,
     "isExtension": false,
-    "playTime": "до 20 мин",
+    "playTime": "20 мин",
     "owner": "https://sun9-76.userapi.com/s/v1/ig2/4b9kiLueBckv2gyJph4kHpTmJnzuZJxmEZ8YbLmad4F5TZx6dmjtlJwIqwCmnUgKdX_rx9thW33cSIKMhF4MEYXz.jpg?quality=95&crop=9,488,1010,1010&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&u=UDKiFSMPEaJBcDvZ2B0vebnkczcEDVmYiIKoRowNFPw&cs=50x50"
   },
   {
@@ -125,7 +125,7 @@
     "minPlayers": 2,
     "maxPlayers": 4,
     "isExtension": false,
-    "time": "120 - 180 мин"
+    "playTime": "120 - 180 мин"
   },
   {
     "id": 40690,
@@ -134,7 +134,7 @@
     "minPlayers": 2,
     "maxPlayers": 8,
     "isExtension": false,
-    "playTime": "до 10 мин",
+    "playTime": "10 мин",
     "owner": "https://sun9-76.userapi.com/s/v1/ig2/4b9kiLueBckv2gyJph4kHpTmJnzuZJxmEZ8YbLmad4F5TZx6dmjtlJwIqwCmnUgKdX_rx9thW33cSIKMhF4MEYXz.jpg?quality=95&crop=9,488,1010,1010&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&u=UDKiFSMPEaJBcDvZ2B0vebnkczcEDVmYiIKoRowNFPw&cs=50x50"
   },
   {
@@ -144,7 +144,7 @@
     "minPlayers": 2,
     "maxPlayers": 8,
     "isExtension": false,
-    "playTime": "до 10 мин",
+    "playTime": "10 мин",
     "owner": "https://sun9-76.userapi.com/s/v1/ig2/4b9kiLueBckv2gyJph4kHpTmJnzuZJxmEZ8YbLmad4F5TZx6dmjtlJwIqwCmnUgKdX_rx9thW33cSIKMhF4MEYXz.jpg?quality=95&crop=9,488,1010,1010&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&u=UDKiFSMPEaJBcDvZ2B0vebnkczcEDVmYiIKoRowNFPw&cs=50x50"
   },
   {
@@ -154,7 +154,7 @@
     "minPlayers": 2,
     "maxPlayers": 8,
     "isExtension": false,
-    "playTime": "до 10 мин",
+    "playTime": "10 мин",
     "owner": "https://sun9-76.userapi.com/s/v1/ig2/4b9kiLueBckv2gyJph4kHpTmJnzuZJxmEZ8YbLmad4F5TZx6dmjtlJwIqwCmnUgKdX_rx9thW33cSIKMhF4MEYXz.jpg?quality=95&crop=9,488,1010,1010&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&u=UDKiFSMPEaJBcDvZ2B0vebnkczcEDVmYiIKoRowNFPw&cs=50x50"
   },
   {
@@ -164,7 +164,7 @@
     "minPlayers": 2,
     "maxPlayers": 5,
     "isExtension": false,
-    "time": "40 - 90 мин"
+    "playTime": "40 - 90 мин"
   },
   {
     "id": 119,
@@ -223,7 +223,7 @@
     "minPlayers": 2,
     "maxPlayers": 5,
     "isExtension": false,
-    "playTime": "от 30 мин",
+    "playTime": "30 мин",
     "owner": "https://sun9-2.userapi.com/s/v1/ig2/Xtt_IIeCiyrYNGI4WvEXKlUbbcqOgIMaor2zEO-n4XsRgnGcaUby1PE8r-in97eG_HgAUcVQG7EpyT_PHKAS5W-w.jpg?quality=95&crop=213,309,476,476&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&u=sOnJzCcPEG01UEq4dWPAQeTPlvjY-aHJqZa95SJmE9s&cs=50x50"
   },
   {
@@ -233,7 +233,7 @@
     "minPlayers": 2,
     "maxPlayers": 5,
     "isExtension": true,
-    "playTime": "от 30 мин",
+    "playTime": "30 мин",
     "owner": "https://sun9-2.userapi.com/s/v1/ig2/Xtt_IIeCiyrYNGI4WvEXKlUbbcqOgIMaor2zEO-n4XsRgnGcaUby1PE8r-in97eG_HgAUcVQG7EpyT_PHKAS5W-w.jpg?quality=95&crop=213,309,476,476&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&u=sOnJzCcPEG01UEq4dWPAQeTPlvjY-aHJqZa95SJmE9s&cs=50x50"
   },
   {
@@ -303,7 +303,7 @@
     "playersMin": 3,
     "playersMax": 8,
     "isExtension": false,
-    "time": "30 - 45 мин"
+    "playTime": "30 - 45 мин"
   },
   {
     "id": 10238,
@@ -632,7 +632,7 @@
     "minPlayers": 2,
     "maxPlayers": 5,
     "isExtension": false,
-    "time": "30 - 45 мин"
+    "playTime": "30 - 45 мин"
   },
   {
     "id": 219513,
@@ -791,7 +791,7 @@
     "minPlayers": 2,
     "maxPlayers": 6,
     "isExtension": false,
-    "time": "20 - 60 мин"
+    "playTime": "20 - 60 мин"
   },
   {
     "id": 5576,
@@ -840,7 +840,7 @@
     "minPlayers": 1,
     "maxPlayers": 4,
     "isExtension": false,
-    "time": "30 - 45 мин"
+    "playTime": "30 - 45 мин"
   },
   {
     "id": 8016,
@@ -919,7 +919,7 @@
     "minPlayers": 2,
     "maxPlayers": 4,
     "isExtension": false,
-    "time": "30 - 40 мин"
+    "playTime": "30 - 40 мин"
   },
   {
     "id": 243759,
