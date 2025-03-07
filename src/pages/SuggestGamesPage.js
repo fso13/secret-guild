@@ -39,7 +39,7 @@ const SuggestGamesPage = () => {
 
     // Фильтрация игр по продолжительности
     const filteredByDuration = filteredByPlayers.filter((game) => {
-      const { minTime, maxTime } = parsePlayTime(game.playTime);
+      const { maxTime } = parsePlayTime(game.playTime);
       return maxTime <= totalDuration * 60; // Игры, которые укладываются в общее время
     });
 
