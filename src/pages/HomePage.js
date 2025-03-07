@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Container, Link  } from '@mui/material';
+import { Box, Typography, Container, Link, useTheme, useMediaQuery } from '@mui/material';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/data/posts.json`)
@@ -14,7 +15,6 @@ const HomePage = () => {
   }, []);
 
 
-  
   // Настройки для карусели
   const settings = {
     infinite: true,
@@ -27,11 +27,22 @@ const HomePage = () => {
     arrows: true,
   };
 
+  const settingsMobile = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: "linear",
+    speed: 1300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+  };
+
   return (
     <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
 
       {/* Описание поста */}
-      <Typography variant="h4" sx={{ mb: 2 }} align='inherit' style={{textAlign: "center" }} >
+      <Typography variant="h4" sx={{ mb: 2 }} align='inherit' style={{ textAlign: "center" }} >
         Сайт группы не без талантливых людей, которые любят играть, создавать, проводить настольные игры.
       </Typography>
       <Typography variant="subtitle2" sx={{ mb: 2 }} align='inherit'>
@@ -39,9 +50,9 @@ const HomePage = () => {
       </Typography>
       {/* Карусель медиа */}
       <Box sx={{ width: '100%', maxWidth: 'auto', height: 'auto', overflow: 'hidden', mb: 4 }}>
-        <Slider {...settings}>
+        {isMobile && (<Slider {...settingsMobile}>
           {posts.flatMap((post) => (post.media))
-           .map((media, index) => (
+            .map((media, index) => (
               <div key={index}>
                 <img
                   src={`${process.env.PUBLIC_URL}` + media}
@@ -51,7 +62,20 @@ const HomePage = () => {
               </div>
             ))
           }
-        </Slider>
+        </Slider>)}
+        {!isMobile && (<Slider {...settings}>
+          {posts.flatMap((post) => (post.media))
+            .map((media, index) => (
+              <div key={index}>
+                <img
+                  src={`${process.env.PUBLIC_URL}` + media}
+                  alt={`Media ${index}`}
+                  style={{ width: 400, height: 400, objectFit: 'cover' }}
+                />
+              </div>
+            ))
+          }
+        </Slider>)}
       </Box>
 
 
