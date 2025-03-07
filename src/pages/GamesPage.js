@@ -10,7 +10,7 @@ const GamesPage = () => {
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/data/games.json`)
       .then((response) => response.json())
-      .then((data) => setGames(data.filter((g)=> g.owner)));
+      .then((data) => setGames(data.filter((g) => g.owner)));
   }, []);
 
   // Фильтрация игр
@@ -58,6 +58,7 @@ const GamesPage = () => {
           </Grid2>
         ))}
       </Grid2>
+
     </Box>
   );
 };

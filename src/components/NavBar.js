@@ -18,6 +18,7 @@ import GamesIcon from '@mui/icons-material/SportsEsports';
 import PostsIcon from '@mui/icons-material/Article';
 import StatsIcon from '@mui/icons-material/BarChart';
 import CalendarIcon from '@mui/icons-material/CalendarToday';
+import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 import AppIcon from '@mui/icons-material/Casino';
 import ThemeToggle from './ThemeToggle'; // Компонент для переключения темы
 
@@ -40,6 +41,7 @@ const NavBar = () => {
     { text: 'Посты', icon: <PostsIcon />, path: '/posts' },
     { text: 'Статистика', icon: <StatsIcon />, path: '/statistics' },
     { text: 'Календарь', icon: <CalendarIcon />, path: '/calendar' },
+    { text: 'Подобрать игры на вечер', icon: <DynamicFeedIcon />, path: '/suggest' },
   ];
 
   return (

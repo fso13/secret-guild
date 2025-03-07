@@ -9,6 +9,7 @@ import StatisticsPage from './pages/StatisticsPage';
 import CalendarPage from './pages/CalendarPage';
 import PostPage from './pages/PostPage'; // Импортируем новую страницу
 import HomePage from './pages/HomePage'; // Импортируем новую страницу
+import SuggestGamesPage from './pages/SuggestGamesPage'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/post/:postId" element={<PostPage />} /> {/* Новый маршрут */}
           <Route path="/game/:gameId" element={<GamePage />} /> {/* Новый маршрут */}
           <Route path="/game/:gameName" element={<GamePage />} />
+          <Route path="/suggest" element={<SuggestGamesPage />} />
           </Routes>
     </div>
   );
