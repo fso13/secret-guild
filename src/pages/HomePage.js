@@ -51,7 +51,7 @@ const HomePage = () => {
       {/* Карусель медиа */}
       <Box sx={{ width: '100%', maxWidth: 'auto', height: 'auto', overflow: 'hidden', mb: 4 }}>
         {isMobile && (<Slider {...settingsMobile}>
-          {posts.flatMap((post) => (post.media))
+          {posts.slice(0,10).flatMap((post) => (post.media))
             .map((media, index) => (
               <div key={index}>
                 <img
