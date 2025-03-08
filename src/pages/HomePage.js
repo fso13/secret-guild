@@ -64,7 +64,7 @@ const HomePage = () => {
           }
         </Slider>)}
         {!isMobile && (<Slider {...settings}>
-          {posts.flatMap((post) => (post.media))
+          {posts.slice(0,10).flatMap((post) => (post.media))
             .map((media, index) => (
               <div key={index}>
                 <img
