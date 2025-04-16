@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { Typography, Container, Box, CardMedia, Chip, Avatar } from '@mui/material';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Helmet } from 'react-helmet';
 
 const GamePage = () => {
   const { gameId } = useParams(); // Получаем название игры из URL
@@ -49,19 +48,6 @@ const GamePage = () => {
   return (
     <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
       {/* Динамические метатеги для Open Graph */}
-      <Helmet>
-        <title>{game.name} - Secret Guild</title>
-        <meta property="og:title" content={`${game.name} - Secret Guild`} />
-        <meta property="og:description" content={game.description} />
-        <meta property="og:image" content={game.image} />
-        <meta property="og:url" content={`https://fso13.github.io/secret-guild/game/${game.name}`} />
-        <meta property="og:type" content="article" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${game.name} - Secret Guild`} />
-        <meta name="twitter:description" content={game.description} />
-        <meta name="twitter:image" content={game.image} />
-      </Helmet>
       <Typography variant="h6">{game.name}</Typography>
 
       <Box sx={{ width: '50%', height: '400px', objectFit: 'contain', position: 'relative' }}>

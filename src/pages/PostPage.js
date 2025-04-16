@@ -4,7 +4,6 @@ import { Typography, Container, Link  } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'; // Импортируем Link для маршрутизации
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Helmet } from 'react-helmet';
 import ImageCarousel from '../components/ImageCarousel';
 
 const PostPage = () => {
@@ -28,18 +27,6 @@ const PostPage = () => {
   return (
     <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
       {/* Динамические метатеги для Open Graph */}
-      <Helmet>
-        <title>{post.title} - Secret Guild</title>
-        <meta property="og:title" content={`${post.title} - Secret Guild`} />
-        <meta property="og:description" content={post.description} />
-        <meta property="og:image" content={post.media[0]} />
-        <meta property="og:url" content={`https://fso13.github.io/secret-guild/post/${postId}`} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${post.title} - Secret Guild`} />
-        <meta name="twitter:description" content={post.description} />
-        <meta name="twitter:image" content={post.media[0]} />
-      </Helmet>
       {/* Заголовок с датой */}
       <Typography variant="h4" gutterBottom>
       {convertStringToDate(post.title).toLocaleDateString('ru')}
