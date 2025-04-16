@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, Typography, Container, Link  } from '@mui/material';
-import Slider from 'react-slick';
 import { Link as RouterLink } from 'react-router-dom'; // Импортируем Link для маршрутизации
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Helmet } from 'react-helmet';
+import ImageCarousel from '../components/ImageCarousel';
 
 const PostPage = () => {
   const { postId } = useParams(); // Получаем postId из URL
@@ -59,21 +59,11 @@ const PostPage = () => {
       </Typography>
 
       {/* Карусель медиа */}
-      <Box sx={{ width: '100%', maxWidth: 600, height: 400, borderRadius: 8, overflow: 'hidden', mb: 4 }}>
-        <Slider {...settings}>
-
-          
-          {post.media.map((media, index) => (
-            <div key={index}>
-              <img
-                src={`${process.env.PUBLIC_URL}` + media}
-                alt={`Media ${index}`}
-                style={{ width: '100%', height: '100%', borderRadius: 8, objectFit: 'cover' }}
-              />
-            </div>
-          ))}
-        </Slider>
-      </Box>
+      <ImageCarousel 
+        images={post.media} 
+        height={400}
+        width="100%"/>
+        
 
      {/* Список игр */}
      <Typography variant="body2" color="text.secondary">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid2, TextField, Box, Button } from '@mui/material';
+import { Grid, TextField, Box, Button } from '@mui/material';
 import GameCard from '../components/GameCard';
 
 const SuggestGamesPage = () => {
@@ -82,9 +82,9 @@ const SuggestGamesPage = () => {
   return (
     <Box sx={{ py: 4 }}>
       {/* Форма для ввода параметров */}
-      <Grid2 container spacing={2} justifyContent="center" alignItems="center" sx={{ mb: 4 }}>
+      <Grid container spacing={2} justifyContent="center" alignItems="center" sx={{ mb: 4 }}>
         {/* Поле для ввода общей продолжительности */}
-        <Grid2 item xs={12} sm={4}>
+        <Grid item xs={12} sm={4}>
           <TextField
             label="Общая продолжительность (часы)"
             type="number"
@@ -93,10 +93,10 @@ const SuggestGamesPage = () => {
             fullWidth
             inputProps={{ min: 1 }}
           />
-        </Grid2>
+        </Grid>
 
         {/* Поле для ввода количества игроков */}
-        <Grid2 item xs={12} sm={4}>
+        <Grid item xs={12} sm={4}>
           <TextField
             label="Количество игроков"
             type="number"
@@ -105,10 +105,10 @@ const SuggestGamesPage = () => {
             fullWidth
             inputProps={{ min: 1 }}
           />
-        </Grid2>
+        </Grid>
 
         {/* Поле для ввода количества игр */}
-        <Grid2 item xs={12} sm={4}>
+        <Grid item xs={12} sm={4}>
           <TextField
             label="Количество игр"
             type="number"
@@ -117,8 +117,8 @@ const SuggestGamesPage = () => {
             fullWidth
             inputProps={{ min: 1 }}
           />
-        </Grid2>
-      </Grid2>
+        </Grid>
+      </Grid>
 
       {/* Кнопка для подбора игр */}
       <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
@@ -128,13 +128,13 @@ const SuggestGamesPage = () => {
       </Box>
 
       {/* Сетка карточек игр */}
-      <Grid2 container spacing={3} justifyContent="center">
+      <Grid container spacing={3} justifyContent="center">
         {filteredGames.map((game) => (
-          <Grid2 item key={game.id} xs={12} sm={6} md={4}>
+          <Grid item key={game.id} xs={12} sm={6} md={4}>
             <GameCard game={game} />
-          </Grid2>
+          </Grid>
         ))}
-      </Grid2>
+      </Grid>
     </Box>
   );
 };

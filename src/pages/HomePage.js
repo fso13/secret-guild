@@ -3,6 +3,8 @@ import { Box, Typography, Container, Link, useTheme, useMediaQuery } from '@mui/
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ImageCarousel from '../components/ImageCarousel';
+
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const theme = useTheme();
@@ -50,32 +52,14 @@ const HomePage = () => {
       </Typography>
       {/* Карусель медиа */}
       <Box sx={{ width: '100%', maxWidth: 'auto', height: 'auto', overflow: 'hidden', mb: 4 }}>
-        {isMobile && (<Slider {...settingsMobile}>
-          {posts.slice(0,10).flatMap((post) => (post.media))
-            .map((media, index) => (
-              <div key={index}>
-                <img
-                  src={`${process.env.PUBLIC_URL}` + media}
-                  alt={`Media ${index}`}
-                  style={{ width: 400, height: 400, objectFit: 'cover' }}
-                />
-              </div>
-            ))
-          }
-        </Slider>)}
-        {!isMobile && (<Slider {...settings}>
-          {posts.slice(0,10).flatMap((post) => (post.media))
-            .map((media, index) => (
-              <div key={index}>
-                <img
-                  src={`${process.env.PUBLIC_URL}` + media}
-                  alt={`Media ${index}`}
-                  style={{ width: 400, height: 400, objectFit: 'cover' }}
-                />
-              </div>
-            ))
-          }
-        </Slider>)}
+        {/* Карусель медиа */}
+        <ImageCarousel
+          visibleCount={3} // Показывать 3 изображения одновременно
+          gap={20} // Отступ между изображениями 20px
+          images={posts.slice(0, 10).flatMap((post) => (post.media))}
+          height={300}
+          width="100%" />
+
       </Box>
 
 
