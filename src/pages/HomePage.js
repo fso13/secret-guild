@@ -1,44 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Container, Link, useTheme, useMediaQuery } from '@mui/material';
-import Slider from 'react-slick';
+import { Box, Typography, Container, Link } from '@mui/material';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ImageCarousel from '../components/ImageCarousel';
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/data/posts.json`)
       .then((response) => response.json())
       .then((data) => setPosts(data));
   }, []);
-
-
-  // Настройки для карусели
-  const settings = {
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    cssEase: "linear",
-    speed: 1300,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: true,
-  };
-
-  const settingsMobile = {
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    cssEase: "linear",
-    speed: 1300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-  };
 
   return (
     <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
@@ -61,9 +34,6 @@ const HomePage = () => {
           width="100%" />
 
       </Box>
-
-
-
     </Container>
   );
 };

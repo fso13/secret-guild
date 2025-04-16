@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Typography, Container, Link  } from '@mui/material';
+import { Typography, Container, Link  } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'; // Импортируем Link для маршрутизации
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -21,21 +21,9 @@ const PostPage = () => {
       });
   }, [postId]);
 
-  // Настройки для карусели
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true, // Показываем стрелки только если больше одного элемента
-  };
-
   if (!post) {
     return <Typography>Пост не найден</Typography>;
   }
-
-  
 
   return (
     <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
@@ -47,7 +35,6 @@ const PostPage = () => {
         <meta property="og:image" content={post.media[0]} />
         <meta property="og:url" content={`https://fso13.github.io/secret-guild/post/${postId}`} />
         <meta property="og:type" content="article" />
-
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${post.title} - Secret Guild`} />
         <meta name="twitter:description" content={post.description} />
